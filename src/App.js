@@ -7,6 +7,7 @@ import Search from './components/layout/Search/Search';
 import Alert from './components/layout/Alert/Alert'
 import About from './components/singlePages/About/About'
 import User from './components/layout/Users/User';
+import GithubState from './context/github/GithubState';
 
 import './App.css';
 
@@ -67,7 +68,8 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <GithubState>
+      <Router>
       <div className="App">
         <Navbar  />
         <div style={{border: 'black solid 1px'}} className="container">
@@ -97,10 +99,11 @@ const App = () => {
                   />
                  
               )} />
-          </Switch>
-        </div>
-      </div>
-    </Router>
+           </Switch>
+          </div>
+       </div>
+      </Router>
+    </GithubState>
   );
 }
 
